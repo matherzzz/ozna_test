@@ -7,15 +7,6 @@ import os
 tau = 600
 h = 0.1
 x = np.arange(0, 10+h, h)
-def exact_solution(x_i, t, a):
-    u = np.zeros(len(x))
-    for i in range(len(x)):
-        u[i] = x[i] * x[i] * np.exp(-(x_i - x[i]) * (x_i - x[i]) / (4 * a * a * t))
-    
-    return np.trapz(u, x) / (2 * a * np.sqrt(np.pi * t))
-    
-
-
 def diagonal(A):
 	C = make_coef(A)
 	answ = list()
